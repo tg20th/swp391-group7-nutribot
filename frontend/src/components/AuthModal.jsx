@@ -2,6 +2,7 @@ import { CheckCircle2, Eye, EyeOff, LoaderCircle, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { ApiError } from '../services/apiClient';
 import { loginAccount, registerAccount } from '../services/authApi';
+import '../styles/auth-popup.css';
 
 const emptyForm = { name: '', username: '', email: '', password: '', confirmPassword: '' };
 
