@@ -10,6 +10,18 @@
   width: 100%;
 }
 
+.auth-modal label,
+.auth-modal label > input,
+.auth-modal .password-input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.auth-modal label > input,
+.auth-modal .password-input input {
+  box-sizing: border-box;
+}
+
 .auth-modal .password-input {
   display: block;
 }
