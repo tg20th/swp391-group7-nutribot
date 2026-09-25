@@ -1,4 +1,4 @@
-import { BarChart3, BookOpen, CalendarDays, MapPin, Rss } from 'lucide-react';
+import { BarChart3, BookOpen, CalendarDays, MapPin, Rss, User } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getMyProfile } from '../../services/profileApi';
@@ -18,7 +18,10 @@ export default function CommunitySideNav() {
         : <button key={label} type="button" title={label}><Icon size={20}/><span>{label}</span></button>;
     })}
     <Link to="/community/profile" className={`community-sidenav-profile${pathname === '/community/profile' ? ' is-active' : ''}`} title="Your profile" aria-label="Open your profile">
-      {communityUser.avatarUrl && <img src={communityUser.avatarUrl} alt=""/>}
+      {communityUser.avatarUrl
+        ? <img src={communityUser.avatarUrl} alt=""/>
+        : <span className="community-sidenav-avatar-placeholder"><User size={18}/></span>
+      }
       <span><b>{communityUser.fullName ?? communityUser.name}</b><small>View your profile</small></span>
     </Link>
   </nav>;
