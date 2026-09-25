@@ -31,9 +31,6 @@
 .community-hamburger:hover{background:#e4ece2}
 .community-hamburger:focus-visible{outline:3px solid var(--community-acid);outline-offset:2px}
 
-/* Avatar placeholder for sidebar (no longer used - fallback avatar image now) */
-.community-sidenav-avatar-placeholder{width:30px;height:30px;border-radius:50%;background:var(--sage);border:2px solid var(--community-acid);display:grid;place-items:center;color:var(--community-ink);flex:none}
-
 /* Mobile drawer overlay */
 .community-drawer-overlay{display:none;position:fixed;inset:0;background:rgba(23,53,41,.4);z-index:25;opacity:0;transition:opacity .25s ease}
 .community-drawer-overlay.is-open{display:block;opacity:1}
