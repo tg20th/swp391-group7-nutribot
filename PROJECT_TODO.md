@@ -89,7 +89,7 @@
 ---
 
 ### 🤖 LAN (AI Specialist & React FE - 13 tasks)
-- [ ] **#32 [AI] Dựng Python FastAPI AI Service & NutriBot System Prompt**
+- [x] **#32 [AI] Dựng Python FastAPI AI Service & NutriBot System Prompt**
   - *Mô tả:* Dựng ứng dụng FastAPI trong thư mục `ai-service/`, kết nối Gemini/OpenAI API, cấu hình System Prompt chuyên gia dinh dưỡng thực vật, mở endpoint `POST /api/ai/chat`.
   - *File cần tạo:* `ai-service/main.py`, `ai-service/requirements.txt`, `ai-service/Dockerfile`.
 - [x] **#1 [FE] Màn hình Đăng ký (`/register`)** ✅
@@ -126,7 +126,7 @@
 - [ ] **#18 [FE] Form Soạn thảo & Đăng Blog**
   - *Mô tả:* Trình soạn thảo văn bản, upload ảnh thumbnail, chọn danh mục bài viết.
   - *File cần tạo:* `frontend/src/pages/CreateBlogPage.jsx`.
-- [ ] **#20 [FE] Màn hình "Blog của tôi"**
+- [x] **#20 [FE] Màn hình "Blog của tôi"** ✅
   - *Mô tả:* Danh sách bài viết cá nhân đã đăng, nút sửa bài và nút xóa bài kèm dialog xác nhận.
   - *File cần tạo:* `frontend/src/pages/MyBlogsPage.jsx`.
 - [ ] **#21 [FE] Màn hình Danh sách & Chi tiết Video nấu ăn**
@@ -147,13 +147,13 @@
 ## 🏃 SPRINT 2: Quản trị Admin, Thực đơn Tuần & Nhà hàng GPS (Tasks #33 - #51)
 
 ### ☕ TRƯỜNG (Backend - 5 tasks)
-- [ ] **#36 [BE] Admin API: Quản lý Người dùng**
+- [x] **#36 [BE] Admin API: Quản lý Người dùng** ✅
   - *Mô tả:* API `GET /api/v1/admin/users` (phân trang, tìm kiếm), `PUT /api/v1/admin/users/{id}/status` (khóa/mở khóa tài khoản).
   - *File cần tạo:* `controller/AdminUserController.java`.
-- [ ] **#38 [BE] Admin API: Kiểm duyệt Nội dung Blog/Video**
+- [x] **#38 [BE] Admin API: Kiểm duyệt Nội dung Blog/Video** ✅
   - *Mô tả:* API `GET /api/v1/admin/contents`, `PUT /api/v1/admin/contents/{id}/status` (duyệt, ẩn, xóa bài vi phạm).
   - *File cần tạo:* `controller/AdminContentController.java`.
-- [ ] **#40 [BE] Admin API: Quản lý & Xóa Bình luận Vi phạm**
+- [x] **#40 [BE] Admin API: Quản lý & Xóa Bình luận Vi phạm** ✅
   - *Mô tả:* API `GET /api/v1/admin/comments`, `DELETE /api/v1/admin/comments/{id}`.
 - [ ] **#57 [BE] API Gợi ý Nhà hàng theo Món ăn**
   - *Mô tả:* API `GET /api/v1/restaurants/recommend?dishId=...` kết nối logic gợi ý của Lan để trả về danh sách nhà hàng tương ứng.
