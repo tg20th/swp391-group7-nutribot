@@ -135,4 +135,30 @@ describe('ChatbotWidget', () => {
     const prompts = document.querySelectorAll('.chatbot-widget__prompt');
     expect(prompts.length).toBe(4);
   });
+
+  describe('Guest Trial Limit', () => {
+    it('does not show trial badge for logged in users', () => {
+      localStorage.setItem('nutribot-auth-token', 'fake-jwt-token');
+      renderWithRouter(<ChatbotWidget />);
+      const launcher = screen.getByRole('button', { name: /open nutribot chat/i });
+      fireEvent.click(launcher);
+
+      const badge = document.querySelector('.chatbot-widget__trial-badge');
+      expect(badge).not.toBeInTheDocument();
+    });
+
+    it('shows trial badge after first message for guests', async () => {
+      // Guest: no token
+      localStorage.clear();
+      localStorage.setItem('nutribot_guest_trial_count', '2');
+
+      renderWithRouter(<ChatbotWidget />);
+      const launcher = screen.getByRole('button', { name: /open nutribot chat/i });
+      fireEvent.click(launcher);
+
+      const badge = document.querySelector('.chatbot-widget__trial-badge');
+      expect(badge).toBeInTheDocument();
+      expect(badge.textContent).toContain('2/3 questions left');
+    });
+  });
 });
