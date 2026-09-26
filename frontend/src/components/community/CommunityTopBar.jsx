@@ -101,7 +101,6 @@ export default function CommunityTopBar({ query, onQueryChange, hideSearch = fal
       <Link to="/home" className="community-brand" aria-label="NutriBot member home"><span>Nutri</span>Bot<small>Good Food. Brighter You.</small></Link>
       {!hideSearch && (
         <form className="community-search community-search-form" onSubmit={handleSearchSubmit}>
-          <Search size={16}/>
           <input
             ref={searchInputRef}
             value={localQuery}

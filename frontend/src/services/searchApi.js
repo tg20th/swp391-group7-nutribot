@@ -1,10 +1,10 @@
 import { apiRequest, unwrapData } from './apiClient';
 
 const itemsFrom = (payload) => {
-  const data = unwrapData(payload);
+  const data = payload?.data ?? payload;
   if (Array.isArray(data)) return data;
   if (Array.isArray(data?.content)) return data.content;
-  if (data?.items) return data.items;
+  if (Array.isArray(data?.items)) return data.items;
   return [];
 };
 
@@ -20,12 +20,13 @@ export async function searchContent({ keyword, categoryId, contentType, page = 0
   const path = `/api/v1/search${queryString ? `?${queryString}` : ''}`;
   const payload = await apiRequest(path, { signal });
 
-  const items = itemsFrom(payload);
+  const data = unwrapData(payload, {});
+  const items = itemsFrom(data);
   const meta = {
-    totalElements: payload?.totalElements ?? payload?.total ?? items.length,
-    totalPages: payload?.totalPages ?? 1,
-    page: payload?.number ?? page,
-    size: payload?.size ?? size
+    totalElements: data?.totalElements ?? data?.total ?? items.length,
+    totalPages: data?.totalPages ?? 1,
+    page: data?.page ?? data?.number ?? page,
+    size: data?.size ?? size
   };
 
   return { items, meta };
