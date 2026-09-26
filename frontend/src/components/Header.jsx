@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const links = [{ label: 'Home', target: 'home' }, { label: 'Explore', target: 'explore' }, { label: 'Recipes', target: 'recipes' }, { label: 'Videos', target: 'videos' }, { label: 'Community', target: 'community' }];
 
-export default function Header({ onSearch, onAuth }) {
+export default function Header({ onAuth }) {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState('');
@@ -75,7 +75,6 @@ export default function Header({ onSearch, onAuth }) {
       navigate('/search');
     }
     setOpen(false);
-    if (onSearch) onSearch(value);
   };
 
   const navigateSection = (label) => {
@@ -102,13 +101,15 @@ export default function Header({ onSearch, onAuth }) {
         </nav>
 
         <form className="nav-search" onSubmit={submit}>
-          <Search size={17}/>
+          <button type="submit" className="nav-search-submit" aria-label="Tìm kiếm nội dung">
+            <Search size={17}/>
+          </button>
           <input
             ref={searchInputRef}
-            aria-label="Search content"
+            aria-label="Tìm kiếm nội dung"
             value={value}
             onChange={(e) => setValue(e.target.value)}
-            placeholder="Tìm kiếm công thức, bài viết..."
+            placeholder="Tìm công thức, bài viết..."
           />
         </form>
 
